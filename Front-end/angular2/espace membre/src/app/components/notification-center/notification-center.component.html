@@ -1,0 +1,37 @@
+<div class="well well-sm"><p>  <span class="glyphicon glyphicon-bell"></span>  Notifications</p></div>
+
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">Liste des notifications</div>
+  <div class="panel-body">
+    
+
+	<div class="row" > 
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+              <th> </th>
+              <th> Date/Temps</th>        
+            </tr>
+          </thead>
+          <tbody *ngIf="notifications">
+           <tr *ngFor="let notif of notifications"  >
+            <td><h3> {{notif.titre}}</h3> <p>{{notif.contenue}}</p> </td>
+            <td>{{notif.date}}<br> <span class="label label-warning">{{notif.temps}}</span></td>
+          </tr>
+
+          <!--<tr class="active"> -->
+        </tbody>
+      </table>
+     </div>
+    </div>
+
+
+
+
+
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div style="margin-top:30px;">
+</div>
+
+<div class="container">
+<div class="panel panel-default" id="custom">
+  <div class="panel-heading">Inscription</div>
+  <div class="panel-body">
+
+
+<br>
+    <form>
+       <p>
+        <md-input class="demo-full-width" [(ngModel)]="nom" name="nom"  placeholder=" Nom et prenom" ></md-input>
+        <md-input class="demo-full-width" name="someting" [(ngModel)]="email"   placeholder=" Email"></md-input>
+      </p>
+
+      <br>
+      <p>
+        <md-input class="demo-full-width"  name="d" [(ngModel)]="date_naissance" placeholder="Date naissance" ></md-input>
+        <md-input class="demo-full-width" name="adresse" [(ngModel)]="addresse" placeholder="Adresse "></md-input>
+      </p>
+      <br>
+
+      <table style="width: 100%" cellspacing="0"><tr>
+        <td><md-input class="demo-full-width" name="numero_tel" [(ngModel)]="num_tel" placeholder="Numero telephone 1"></md-input></td>
+        <td><md-input class="demo-full-width"   placeholder="Numero telephone 2"></md-input></td>
+        <td><md-input #numCin class="demo-full-width" name="nu" [(ngModel)]="cin" maxlength="8" placeholder="Numero cin">
+          <md-hint align="end"><span style="color:cadetblue;font-size: 12px">{{numCin.characterCount}} /8 </span> </md-hint>
+        </md-input></td>
+      </tr></table>
+      <br><br>
+  <div class="row">
+    <div class="col-sm-6">
+            <label for="sel1"> Status</label>
+            <select  name="x" [(ngModel)]="status" class="form-control" id="sel1" style="width:40%;">
+              <option>marie</option>
+              <option>non marie</option>
+            </select>
+    </div>
+  <div class="col-sm-6">
+          <label for="sel1"> Titre</label>
+          <select name="y" [(ngModel)]="titre" class="form-control" id="sel1" style="width:70%;">
+        <option>docteur</option>
+        <option>chercheur</option>
+        </select>
+  </div>
+</div>
+
+<br><br>
+
+       <p>
+        <md-input class="demo-full-width" [(ngModel)]="alias" name="z"  placeholder="Alias" ></md-input>
+        <md-input class="demo-full-width" name="j" [(ngModel)]="passwd"  placeholder="Mot de passe " type="password"></md-input>
+      </p>
+      <br>
+
+      <md-input class="demo-full-width" name="dd" [(ngModel)]="pos_actuelle" placeholder=" Position actuelle" style="width:80%;"></md-input>
+      <br><br>
+      <button md-raised-button color="primary"  (click)="logFormData()" >Confirmer</button>
+      <br><br>
+    </form>
+  </div>
+</div>
+</div>

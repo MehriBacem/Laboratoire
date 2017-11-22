@@ -1,0 +1,161 @@
+<div class="well well-sm">
+  <p> <span class="glyphicon glyphicon-blackboard"></span>  Profile</p>
+</div>
+
+
+
+<div style="margin-top:30px;">
+</div>
+
+<div class="panel panel-default" id="custom" *ngIf="profile" >
+  <div class="panel-heading" style="background-color:  #2d3f51; color:white;" >Visualiser et éditer votre profile</div>
+<div class="panel-body"  >
+
+  <div class="row">
+    <div class="col-sm-6">
+      <h4> Profile</h4>
+      <br>
+      <md-card>
+        <img src="http://m.likesuccess.com/quotes/13/610595.png" id="profile-picture" />
+        <p class="boldme" >Nom et prénom :</p>
+        {{profile.nom_prenom}}
+        <div style="height:180px;"></div>
+
+
+ <table class="table table-bordered">
+    <tbody>
+
+       <tr>
+        <td><div class="boldme"> Email: </div></td>
+        <td>{{profile.email}}</td>
+      </tr>
+      <tr>
+        <td><div class="boldme"> Date naissance: </div></td>
+        <td>{{profile.date_naissance}}</td>
+      </tr>
+
+      <tr>
+        <td><div class="boldme"> Addresse: </div></td>
+        <td>{{profile.adresse}}</td>
+      </tr>
+
+    <tr>
+        <td><div class="boldme"> Numero telephone:</div></td>
+        <td>{{profile.numero_tel[0]}}</td>
+         <!--fix this mess -->
+      </tr>
+      <tr>
+        <td><div class="boldme"> Numero_cin: </div></td>
+        <td>{{profile.num_cin}}</td>
+      </tr>
+      <tr>
+        <td><div class="boldme"> Status: </div></td>
+        <td>{{profile.status}}</td>
+      </tr>
+      <tr>
+        <td><div class="boldme"> Titre:</div></td>
+        <td>{{profile.titre}}</td>
+      </tr>
+      <tr>
+        <td><div class="boldme"> Alias: </div></td>
+        <td>{{profile.alias}}</td>
+      </tr>
+      <tr>
+        <td><div class="boldme"> Position actuelle: </div></td>
+        <td>{{profile.position_actuelle}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+</md-card>
+</div>
+<div class="col-sm-6">
+  <h4>Editer votre profile</h4>
+
+
+
+
+
+  <br>
+  <form>
+    <p>
+      <md-input class="demo-full-width"  name="x" [(ngModel)]="profile.nom_prenom"  placeholder=" nom et prenom"></md-input>
+      <md-input class="demo-full-width"  name="y" [(ngModel)]="profile.email"  placeholder=" email"></md-input>
+    </p>
+
+    <br>
+    <p>
+      <md-input class="demo-full-width"  name="z"  [(ngModel)]="profile.date_naissance"  placeholder="date naissance"></md-input>
+      <md-input class="demo-full-width"  name="h"  [(ngModel)]="profile.adresse"  placeholder="Addresse "></md-input>
+    </p>
+    <br>
+
+    <table style="width: 100%" cellspacing="0">
+<tr>
+  <td>
+    <md-input class="demo-full-width"  name="ff"    placeholder="numero telephone 1"></md-input>
+  </td>
+  <td>
+    <md-input class="demo-full-width"  name="tt"  placeholder="numero telephone 2"></md-input>
+  </td>
+  <td>
+    <md-input #numCin class="demo-full-width" maxlength="8"  name="sd"  [(ngModel)]="profile.num_cin"  placeholder="numero cin">
+      <md-hint align="end">
+        <span style="color:cadetblue;font-size: 12px">{{numCin.characterCount}} /8 </span>
+</md-hint>
+</md-input>
+</td>
+</tr>
+</table>
+<br><br>
+<div class="row">
+  <div class="col-sm-6">
+    <label for="sel1"> Status</label>
+    <select class="form-control" id="sel1" style="width:40%;">
+<option>Marié</option>
+<option>non marie</option>
+</select>
+</div>
+<div class="col-sm-6">
+  <label for="sel1"> Titre</label>
+  <select class="form-control" id="sel1" style="width:70%;">
+<option>Docteur</option>
+<option>chercheur</option>
+</select>
+</div>
+</div>
+
+<br><br>
+
+<p>
+  <md-input class="demo-full-width"  name="ed"  [(ngModel)]="profile.alias"  placeholder="Alias"></md-input>
+  <md-input class="demo-full-width"  name="de"  [(ngModel)]="profile.password"  placeholder="Mot de passe " type="password"></md-input>
+</p>
+<br>
+
+<md-input class="demo-full-width"  name="fg"  [(ngModel)]="profile.position_actuelle"  placeholder=" position actuelle" style="width:80%;"></md-input>
+<br><br>
+<button md-raised-button color="primary">Confirmer</button>
+
+<br>
+<br>
+
+
+
+
+<br><br>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+</div>

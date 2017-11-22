@@ -1,0 +1,46 @@
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">Ajouter une notification</div>
+  <div class="panel-body" style="padding:40px;width:60%;">
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Titre</label>
+  <div class="col-10">
+    <input class="form-control" type="text"   name="d" [(ngModel)]="titre"    id="example-text-input">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-search-input" class="col-2 col-form-label">Contenue</label>
+  <div class="col-10">
+   <textarea class="form-control" rows="5" name="g"  [(ngModel)]="contenue"   id="comment"></textarea>
+  </div>
+</div>
+
+
+
+<button type="button"  (click)="add_notif()"  class="btn btn-default">Submit</button>
+<br><br>
+<div class="alert alert-success" *ngIf="status" >
+  {{status}}
+</div>
+
+
+
+
+
+
+
+  </div>
+</div>

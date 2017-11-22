@@ -1,0 +1,65 @@
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                  
+                        <a >Espace membre</a>
+                  
+                </li>
+                <li>
+                    <a routerLink="/profile"> <span class="glyphicon glyphicon-blackboard"></span> Profile</a>
+                </li>
+                <li>
+                    <a routerLink="/docs"><span class="glyphicon glyphicon-folder-open"></span> Bibliothèque en ligne</a>
+                </li>
+                <li>
+                    <a routerLink="/projets"><span class="glyphicon glyphicon-calendar"></span> Projets</a>
+                </li>
+                <li>
+                    <a routerLink="/chat"><span class="glyphicon glyphicon-comment"></span> Tchat</a>
+                </li>
+                <li>
+                    <a routerLink="/notif"><span class="glyphicon glyphicon-bell"></span> Notifications</a>
+                </li>
+
+                
+                <li     >   <!--*ngIf="is_admin_or_not"    fix this and then get it back-->    
+                    <a routerLink="/admin" style="color:#F5F5F5"  ><span class="glyphicon glyphicon-cog"></span> Espace admin</a>
+                </li>
+                
+
+                <!--haha the last link will not appear for some reason-->
+                <li><a  routerLink="/welcome/1"></a></li>
+
+            </ul>
+
+
+    
+<button  id="fix_me" type="button" class="btn btn-danger">Déconnexion </button>
+
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+<!--
+
+    debug
+<button type="button"  (click)="test()"  class="btn btn-default">kakaiiii</button>
+-->
+
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+
+          <router-outlet></router-outlet>
+
+
+        </div>
+        <!-- /#page-content-wrapper -->
+
+
+
+    </div>

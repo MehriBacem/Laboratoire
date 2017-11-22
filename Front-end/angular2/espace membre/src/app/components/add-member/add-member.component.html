@@ -1,0 +1,96 @@
+
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Liste des demandes d'inscription</h3>
+    </div>
+    <div class="panel-body" *ngIf="members">
+      
+
+      <md-card *ngFor="let member of members" style="margin-bottom:10px;width:70%" >
+        <div class="row">
+          <div class="col-sm-4">
+
+
+
+
+
+
+
+
+
+
+<table class="table table-condensed">
+    <tbody>
+      <tr>
+        <td>Nom et Prénom</td>
+        <td>{{member.nom_prenom}}</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>{{member.email}} </td>
+      </tr>
+      
+      <tr>
+        <td>Numero_cin</td>
+        <td>{{member.num_cin}}</td>
+      </tr>
+      <tr>
+        <td>alias</td>
+        <td>{{member.alias}}</td>
+      </tr>
+      <tr>
+        <td>status</td>
+        <td>{{member.status}}</td>
+      </tr>
+      <tr>
+        <td>num_téléphone</td>
+        <td>{{member.numero_tel[0]}}</td>
+      </tr>
+
+      <tr>
+        <td>Adresse</td>
+        <td>{{member.adresse}} </td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+
+            
+          </div>
+         
+
+<div class="col-sm-6">
+</div>
+
+          <div class="col-sm-2">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br> 
+            <br> 
+            <button md-raised-button color="primary"  (click)="accept(member)" >Accepter</button><br><br>
+            <button md-raised-button color="accent"   (click)="refuse(member)" >Refuser</button>
+          </div>
+        </div>
+
+
+
+      </md-card>
+
+
+    </div>
+</div>
+

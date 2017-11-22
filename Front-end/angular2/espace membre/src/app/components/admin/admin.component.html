@@ -1,0 +1,275 @@
+<div class="well well-sm"><p> <span class="glyphicon glyphicon-cog"></span>   Espace admin</p></div>
+
+
+<md-tab-group>
+  <md-tab>
+    <template md-tab-label>News et actualités du labo</template>
+    <template md-tab-content>
+       <br><br>
+          <button md-raised-button color="primary"  (click)="add_notif_router()"   style="float:right">Ajouter une nouvelle notification</button><br><br><br>
+
+   <div class="panel panel-default">
+      <div class="panel-heading">Liste des notifications</div>
+      <div class="panel-body">
+          <ul class="list-group" *ngIf="notifications" >
+            <li class="list-group-item" *ngFor="let notification of notifications" >
+                <span style="float:right;" (click)='remove_notification(notification)' class="glyphicon glyphicon-minus" ></span>
+              <h3>{{notification.titre}}</h3>
+                <p>{{notification.contenue}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quod consequatur laborum non, ex porro, consequuntur dolor enim fuga odio similique ad laudantium quas beatae adipisci repudiandae quaerat ullam incidunt.</p>
+            </li>
+          </ul>
+      </div>
+    </div>
+
+    
+    
+
+
+    </template>
+  </md-tab>
+  <md-tab>
+    <template md-tab-label>Membres</template>
+    <template md-tab-content>
+      <br>
+        <div class="col-sm-9">
+        </div>
+        <div class="col-sm-3">
+          <button md-raised-button   (click)="routeMe()" color="primary">Consulter liste des demandes</button>
+        </div>
+
+
+
+ <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom et prénom</th>
+        <th>Numero téléphone</th>
+        <th>Alias</th>
+        <th>ID</th>
+        <th>Email</th>
+        <th>---</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="members" >
+      <tr *ngFor="let member of members">
+        <td>{{member.nom_prenom}}</td>
+        <td> {{member.numero_tel[0]}}  </td>
+        <td>{{member.alias}}</td>
+        <td> {{member.id_membre}} </td>
+        <td>{{member.email}} </td>
+        <td> <span class="glyphicon glyphicon-remove" (click)="delete(member)"  ></span> </td>
+      </tr>
+      <tr>
+        <td>John nash</td>
+        <td>20 160 609</td>
+        <td>john</td>
+        <td>57</td>
+        <td>john@example.com</td>
+        <td><span class="glyphicon">&#xe014;</span></td>
+      </tr>
+      <tr>
+        <td>John nash</td>
+        <td>20 160 609</td>
+        <td>john</td>
+        <td>57</td>
+        <td>john@example.com</td>
+        <td><span class="glyphicon">&#xe014;</span></td>
+      </tr>
+      <tr>
+        <td>John nash</td>
+        <td>20 160 609</td>
+        <td>john</td>
+        <td>57</td>
+        <td>john@example.com</td>
+        <td><span class="glyphicon">&#xe014;</span></td>
+      </tr>
+      <tr>
+        <td>John nash</td>
+        <td>20 160 609</td>
+        <td>john</td>
+        <td>57</td>
+        <td>john@example.com</td>
+        <td><span class="glyphicon">&#xe014;</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+    </template>
+  </md-tab>
+
+   <md-tab>
+    <template md-tab-label>Forums</template>
+    <template md-tab-content>
+ <br><br><br>
+
+
+<div class="panel panel-default" id="custom"  >
+  <div class="panel-heading" style="background-color:  #2d3f51; color:white;" >Gérer les forums</div>
+<div class="panel-body"  >
+
+
+<div class="row">
+<div class="col-sm-10"></div>
+<div class="col-sm-2">
+
+  
+  <button type="button" class="btn btn-large btn-block btn-primary" (click)="redirect_me()" >Liste des demandes</button>
+  
+</div>
+
+</div>
+<br>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Sujet</th>
+        <th>Email-prorietaire</th>
+        <th> Date lancement</th>
+        <th>Commentaires</th>
+        <th> -- </th>
+      </tr>
+    </thead>
+    <tbody>
+ 
+      <tr>
+        <td>Creation d'entreprise</td>
+        <td>Test d'integration de platforme ...</td>
+        <td>jamel@hotmail.com</td>
+        <td>23-03-2009</td>
+        <td>54</td>
+        <td><span class="glyphicon glyphicon-minus" (click)="active()"  ></span> </td>
+      </tr>
+       <tr>
+        <td>Creation d'entreprise</td>
+        <td>Test d'integration de platforme ...</td>
+        <td>jamel@hotmail.com</td>
+        <td>23-03-2009</td>
+        <td>54</td>
+        <td><span class="glyphicon glyphicon-minus" (click)="active()"  ></span> </td>
+      </tr>
+       <tr>
+        <td>Creation d'entreprise</td>
+        <td>Test d'integration de platforme ...</td>
+        <td>jamel@hotmail.com</td>
+        <td>23-03-2009</td>
+        <td>54</td>
+        <td><span class="glyphicon glyphicon-minus" (click)="active()"  ></span> </td>
+      </tr>
+ 
+    </tbody>
+  </table>
+
+
+
+</div>
+</div>
+
+
+
+
+    </template>
+   </md-tab>
+
+
+
+
+   <md-tab>
+    <template md-tab-label>Demandes de contact </template>
+    <template md-tab-content>
+<br><br><br>
+
+
+
+
+
+
+
+
+<div class="panel panel-default" id="custom"  >
+  <div class="panel-heading" style="background-color:  #2d3f51; color:white;" >Gérer les actualités</div>
+<div class="panel-body"  >
+
+
+<br>
+
+
+
+
+
+<div class="col-sm-9">
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Message</th>
+        <th> -- </th>
+      </tr>
+    </thead>
+    <tbody>
+ 
+      <tr>
+        <td>Farid Latrech</td>
+        <td>jamel@hotmail.com</td>
+        <td>Bonjour je je m'appelle Rondino</td>
+        <td><span class="glyphicon glyphicon-minus" (click)="active()"  ></span> </td>
+      </tr>
+
+      <tr>
+        <td>Farid Latrech</td>
+        <td>jamel@hotmail.com</td>
+        <td>Bonjour je je m'appelle Rondino</td>
+        <td><span class="glyphicon glyphicon-minus" (click)="active()"  ></span> </td>
+      </tr>
+
+      <tr>
+        <td>Farid Latrech</td>
+        <td>jamel@hotmail.com</td>
+        <td>Bonjour je je m'appelle Rondino</td>
+        <td><span class="glyphicon glyphicon-minus" (click)="active()"  ></span> </td>
+      </tr>
+
+      <tr>
+        <td>Farid Latrech</td>
+        <td>jamel@hotmail.com</td>
+        <td>Bonjour je je m'appelle Rondino</td>
+        <td><span class="glyphicon glyphicon-minus" (click)="active()"  ></span> </td>
+      </tr>
+
+ 
+    </tbody>
+  </table>
+</div>
+
+<div class="col-sm-3">
+  <br><br>
+  <button type="button"  style="margin-left:20px;" class="btn btn-large btn-block btn-primary">Supprimer tous</button>
+  <hr>
+  
+</div>
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+    </template>
+   </md-tab>
+
+
+
+</md-tab-group>
